@@ -1,0 +1,11 @@
+:root{
+    --primary: #11A6FB;
+    --nav-bg: #104B97;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
