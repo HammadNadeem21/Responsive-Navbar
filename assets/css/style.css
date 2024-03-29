@@ -1,6 +1,6 @@
 :root{
     --primary: #11A6FB;
-    --nav-bg: #104B97;
+    --nav-bg: #0d3870;
 
 }
 
@@ -8,4 +8,118 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+body{
+    font-family: cursive;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+
+/* navbar */
+.nav-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: var(--nav-bg);
+}
+.nav-links a{
+color: black;
+}
+.logo{
+    font-size: 32px;
+    color: black;
+    font-weight: 800;
+}
+.menu{
+    display: flex;
+    gap: 16px;
+    font-size: 18px;
+}
+
+.menu li:hover{
+    background-color: var(--primary);
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+.menu li{
+    padding: 5px 15px;
+}
+
+/* ---- Dropdown Menu ---- */
+.services{
+    position: relative;
+}
+.dropdown{
+    background-color: var(--nav-bg);
+    padding: 16px 0;
+    position: absolute;
+    /* --------------- */
+    display: none;
+    border-radius: 8px;
+    top: 35px;
+}
+.services:hover .dropdown{
+    display: block;
+}
+
+/* ---- Responsive Navbar ----- */
+
+input[type=checkbox]{
+    display: none;
+}
+.hamburger{
+    display: none;
+    font-size: 24px;
+    user-select: none;
+    color: white;
+}
+
+@media (max-width: 768px){
+    .logo{
+        font-weight: 800;
+    }
+
+    .menu{
+        display: none;
+        position: absolute;
+        background-color: var(--nav-bg);
+        right: 0;
+        left: 0;
+        text-align: center;
+        padding: 16px 0;
+    }
+
+    .menu li:hover{
+        display: inline-block;
+        background-color: var(--primary);
+        transition: 0.3s ease;
+    }
+
+    .menu li+li{
+        margin-top: 12px;
+    }
+
+    input[type=checkbox]:checked~.menu{
+        display: block;
+    }
+
+    .hamburger{
+        display: block;
+    }
+
+    .dropdown{
+        top: 30px;
+        left: 50%;
+        transform: translateX(35%);
+    }
+
+    .dropdown li:hover{
+        background-color: var(--primary);
+    }
 }
